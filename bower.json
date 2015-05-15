@@ -1,0 +1,21 @@
+{
+  "name": "fbPost",
+  "version": "0.0.0",
+  "homepage": "https://github.com/geoyws/fbPost",
+  "authors": [
+    "George Yong <geoyws@gmail.com>"
+  ],
+  "description": "for Carso!",
+  "main": "index.html",
+  "keywords": [
+    "carso"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
