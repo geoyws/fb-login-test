@@ -1,1 +1,19 @@
-ECHO is on.
+body {
+  background: gray;
+}
+
+#toast {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transition: all 2s ease-in;
+  width: 200px;
+  height: 100px;
+  background: blue;
+  color: white;
+  visibility: hidden;
+}
+
+.show {
+  visbility: visible;
+}
