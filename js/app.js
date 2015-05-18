@@ -29,20 +29,20 @@ var app = {
       method == 'POST' ? xmlhttp.send(data) : xmlhttp.send();
     },
     postToWall: function () {
-      var data = document.querySelectorAll('#toBePosted').value;
-      var params = {};
-      params.message = data;
-      var callback = function (response) {
-        // update the UI to state that the update has been a success
-        if (!response || response.error) {
-          console.log(response.error);
-          app.fn.toast('Your update failed for some reason.' + JSON.stringify(response.error));
-        }
-        else {
-          app.fn.toast('Your wall has been successfully updated.');
-        }
-      };
-      FB.api('/me/feed', 'POST', JSON.stringify(params), callback);
+        var data = document.querySelectorAll('#toBePosted')[0].value;
+        var callback = function (response) {
+            // update the UI to state that the update has been a success
+            if (!response || response.error) {
+                console.log(response.error);
+                app.fn.toast('Your update failed for some reason.' + JSON.stringify(response.error));
+            }
+            else {
+                app.fn.toast('Your wall has been successfully updated with: ' + data);
+            }
+        };
+        // we do not use app.fn.ajax here but we use FB.api right away
+        FB.api('/me/feed', 'post', { message: data }, callback);
+        console.log('You updated your wall with: ' + data);
     },
     toast: function (message) {
       toastElement = document.getElementById('toast');
