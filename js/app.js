@@ -4,7 +4,7 @@ if (window.attachEvent && !window.addEventListener) {
 
 var app = {
     fn: {
-        ajax: function (method, apiUrl, headerObject, data, callback) {
+        ajax: function (method, apiURL, headerObject, data, callback) {
             var xmlhttp;
 
             // Checking for browser compatibility
@@ -20,13 +20,13 @@ var app = {
             //console.log(xmlhttp.withCredentials);
             //// Enabling CORS
             //if ('withCredentials' in xmlhttp) {
-            //    xmlhttp.open(method, apiUrl, true);
+            //    xmlhttp.open(method, apiURL, true);
             //}
             //else
             //// enable CORS for MSFT IE
             //if (typeof XDomainRequest != 'undefined') {
             //    xmlhttp = new XDomainRequest();
-            //    xmlhttp.open(method, apiUrl, true);
+            //    xmlhttp.open(method, apiURL, true);
             //}
             //else {
             //    alert('Your browser doesn\'t support CORS.');
@@ -47,9 +47,7 @@ var app = {
                 }
             };
 
-            
-
-            xmlhttp.open(method, apiUrl, true);
+            xmlhttp.open(method, apiURL, true);
             xmlhttp.setRequestHeader(headerObject.title, headerObject.value);
             method == 'POST' ? xmlhttp.send(data) : xmlhttp.send();
         },
@@ -79,7 +77,7 @@ var app = {
             setTimeout(disappear, 4000);
         }
     },
-    apiUrlList: {
+    apiURLList: {
         graphApi: function () { return 'https://graph.facebook.com' },
         postToWall: function () { return '/v2.3/geoyws' },
         postToPage: function () { return '/v2.3/' }
